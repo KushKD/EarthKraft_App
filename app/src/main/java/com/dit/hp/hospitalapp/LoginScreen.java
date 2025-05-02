@@ -53,46 +53,7 @@ public class LoginScreen extends AppCompatActivity implements AsyncTaskListenerO
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
         signIn = findViewById(R.id.signIn);
-//        register = findViewById(R.id.register);
 
-//        ##########################################################
-
-//        EncryptDecrypt encryptDecrypt = new EncryptDecrypt();
-//        String encrypted = encryptText("{\n" +
-//                "  \"firstName\": \"Brijesh\",\n" +
-//                "  \"lastname\": \"Kumar\",\n" +
-//                "  \"patientAge\": \"23\",\n" +
-//                "  \"patientMobile\": \"9876543210\",\n" +
-//                "  \"sampleDate\": \"01-05-2025\",\n" +
-//                "  \"receiptNumber\": \"RCPT20250501\",\n" +
-//                "  \"gender\": \"1\",\n" +
-//                "  \"referredBy\": \"1\",\n" +
-//                "  \"registrationMode\": \"1\",\n" +
-//                "  \"tests\": [\n" +
-//                "    {\n" +
-//                "      \"testName\": \"CBC\",\n" +
-//                "      \"testId\": \"88\"\n" +
-//                "    },\n" +
-//                "    {\n" +
-//                "      \"testName\": \"DDymer\",\n" +
-//                "      \"testId\": \"89\"\n" +
-//                "    },\n" +
-//                "    {\n" +
-//                "      \"testName\": \"Test 2\",\n" +
-//                "      \"testId\": \"90\"\n" +
-//                "    }\n" +
-//                "  ]\n" +
-//                "}");
-//        Log.e("ENC:", encrypted);
-//
-//        String decrypted = decryptText(encrypted);
-//        Log.e("DEC:", decrypted);
-
-//        ##########################################################
-
-
-        username.setText("kush");
-        password.setText("Demo@123");
 
         // Login Button
         signIn.setOnClickListener(v -> {
@@ -231,6 +192,7 @@ public class LoginScreen extends AppCompatActivity implements AsyncTaskListenerO
                         pref.firstName = user.getFirstName();
                         pref.lastName = user.getLastNmae();
                         pref.mobileNumber = user.getMobileNumber();
+                        pref.isLoggedIn = true;
                         pref.savePreferences(this);
 
                         Intent loginIntent = new Intent(LoginScreen.this, Homescreen.class);

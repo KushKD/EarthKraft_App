@@ -86,7 +86,12 @@ public class Homescreen extends AppCompatActivity {
         });
 
         cardView4.setOnClickListener(v -> {
-            CD.showDialog(this, "Coming Soon..");
+            if (!isAuthorizedUserSuperAdmin()) {
+                CD.showDialog(Homescreen.this, "You are not authorized to access this feature.");
+                return;
+            }
+            Intent intent = new Intent(Homescreen.this, LabReport.class);
+            startActivity(intent);
         });
 
         profileButton.setOnClickListener(v -> {
@@ -116,6 +121,14 @@ public class Homescreen extends AppCompatActivity {
         return (roleId == 1 && roleName.equalsIgnoreCase("Super Admin")) ||
                 (roleId == 2 && roleName.equalsIgnoreCase("Admin")) ||
                 (roleId == 8 && roleName.equalsIgnoreCase("Receptionist"));
+    }
+
+    private boolean isAuthorizedUserSuperAdmin() {
+        int roleId = Preferences.getInstance().roleId;
+
+        String roleName = Preferences.getInstance().roleName;
+        return (roleId == 1 && roleName.equalsIgnoreCase("Super Admin")) ||
+                (roleId == 2 && roleName.equalsIgnoreCase("Admin"));
     }
 
 

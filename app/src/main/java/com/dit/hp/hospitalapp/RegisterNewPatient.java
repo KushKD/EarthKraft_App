@@ -335,10 +335,10 @@ public class RegisterNewPatient extends LocationBaseActivity implements SamplePr
                 return;
             }
 
-            if (receiptNumber.getText().toString().isEmpty()) {
-                CD.showDialog(RegisterNewPatient.this, "Please Enter Receipt Number");
-                return;
-            }
+//            if (receiptNumber.getText().toString().isEmpty()) {
+//                CD.showDialog(RegisterNewPatient.this, "Please Enter Receipt Number");
+//                return;
+//            }
 
             showAddConfirmationDialog();
 
@@ -490,7 +490,12 @@ public class RegisterNewPatient extends LocationBaseActivity implements SamplePr
                     patientRecord.setPatientAge(age.getText().toString());
                     patientRecord.setPatientMobile(mobileNumber.getText().toString());
                     patientRecord.setSampleDate(recordDate.getText().toString());
-                    patientRecord.setReceiptNumber(receiptNumber.getText().toString());
+
+                    if (Econstants.isNotEmpty(receiptNumber.getText().toString())) {
+                        patientRecord.setReceiptNumber(receiptNumber.getText().toString().trim());
+                    } else {
+                        patientRecord.setReceiptNumber(""); // or null, if preferred
+                    }
 
                     patientRecord.setGender(String.valueOf(selectedGender.getGenderId()));
                     patientRecord.setReferredBy(String.valueOf(selectedReferredBy.getReferredBYId()));

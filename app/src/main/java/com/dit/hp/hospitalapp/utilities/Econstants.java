@@ -32,6 +32,7 @@ public class Econstants {
 
 
     public static final String loginMethod = "/login";
+    public static final String labReport = "/labReport";
     public static final String genderMethod = "/genders";
     public static final String registrationModesMethod = "/getRegistrationModes";
     public static final String getReferredByMethod = "/getReferredBy";

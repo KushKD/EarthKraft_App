@@ -52,6 +52,11 @@ public class Generic_Async_Post extends AsyncTask<UploadObject,Void , ResponsePo
                 return Data_From_Server;
             }
 
+            else if(TaskType.LAB_REPORTS.toString().equalsIgnoreCase(data.getTasktype().toString())){
+                Data_From_Server = http_manager.PostData(data);
+                return Data_From_Server;
+            }
+
 
         }catch(Exception e){
             return Data_From_Server;

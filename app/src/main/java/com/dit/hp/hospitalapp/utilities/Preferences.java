@@ -24,6 +24,8 @@ public class Preferences {
     private final String KEY_ROLE_ID = "roleId";
     private final String KEY_ROLE_NAME = "roleName";
 
+    private String KEY_IS_LOGED_IN = "isLoggedIn";
+
     // Instance Variables
     public int userId;
     public String userName = null;
@@ -32,6 +34,7 @@ public class Preferences {
     public String lastName = null;
     public int roleId;
     public String roleName = null;
+    public boolean isLoggedIn;
 
     // Singleton Constructor
     private Preferences() {
@@ -62,6 +65,9 @@ public class Preferences {
 
         roleId = preferences.getInt(KEY_ROLE_ID, -1);
         roleName = preferences.getString(KEY_ROLE_NAME, null);
+
+        isLoggedIn = preferences.getBoolean(KEY_IS_LOGED_IN, isLoggedIn);
+
     }
 
     // Save Preferences
@@ -81,6 +87,8 @@ public class Preferences {
 
         editor.putInt(KEY_ROLE_ID, roleId);
         editor.putString(KEY_ROLE_NAME, roleName);
+
+        editor.putBoolean(KEY_IS_LOGED_IN, isLoggedIn);
 
         editor.apply();
     }

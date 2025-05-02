@@ -10,9 +10,8 @@ public enum TaskType {
     GET_REFERRED_BY(5),
     SAVE_PATIENT(6),
 
+    LAB_REPORTS(7);
 
-    IDK_TASK(99999)
-    ;
 
 
     int value;

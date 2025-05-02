@@ -9,6 +9,8 @@ import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.dit.hp.hospitalapp.utilities.Preferences;
+
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -23,15 +25,38 @@ public class SplashScreen extends AppCompatActivity {
         progressBar = findViewById(R.id.loadingProgress);
         progressBar.setVisibility(View.VISIBLE);
 
+        Preferences.getInstance().loadPreferences(SplashScreen.this);
+        if(Preferences.getInstance().isLoggedIn){
+            System.out.println("Logged In "+Preferences.getInstance().isLoggedIn);
+
+        }else{
+            loadPrefrence();
+        }
+
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent mainIntent = new Intent(SplashScreen.this, LoginScreen.class);
-                startActivity(mainIntent);
-                finish();
+                if(Preferences.getInstance().isLoggedIn){
+                     Intent mainIntent = new Intent(SplashScreen.this, Homescreen.class);
+                        SplashScreen.this.startActivity(mainIntent);
+                        SplashScreen.this.finish();
+                 }else{
+
+                    Intent mainIntent = new Intent(SplashScreen.this, LoginScreen.class);
+                    startActivity(mainIntent);
+                    finish();
+                 }
             }
         }, 2500);
     }
 
 
+
+    private void loadPrefrence() {
+        Preferences.getInstance().loadPreferences(SplashScreen.this);
+
+        Preferences.getInstance().isLoggedIn = false;
+        Preferences.getInstance().savePreferences(SplashScreen.this);
+    }
 }

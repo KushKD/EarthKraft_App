@@ -1,0 +1,241 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/a"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+
+        android:gravity="center"
+        android:padding="10dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/logo_clean" />
+
+    <!--android:src="@drawable/dialog_cross"-->
+
+    <TextView
+        android:id="@+id/namex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/a"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center_horizontal"
+        android:text="Generate Id Card  "
+        android:visibility="gone"
+        android:textColor="@color/blue"
+        android:textSize="22sp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/namex"
+        android:orientation="vertical"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.8"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:id="@+id/layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name">
+
+
+
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/name"
+                        android:orientation="vertical">
+
+                        <!--android:minWidth="300dp"-->
+                        <!--android:minHeight="400dp"-->
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/navyblue"
+                            android:gravity="center|center_vertical|center_horizontal"
+                            android:padding="10dp"
+                            android:text="View Daily Lab"
+                            android:textColor="@color/white"
+                            android:textSize="15sp" />
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="3dp"
+                            android:layout_marginTop="2dp"
+                            android:background="#fff"
+                            android:elevation="4dp"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center|center_vertical|center_horizontal"
+                                android:padding="5dp"
+                                android:text="From Date"
+                                android:textColor="@color/darkblue" />
+
+
+                            <TextView
+                                android:id="@+id/from_date"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/raleway_semibold"
+                                android:textColor="@color/blue" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="3dp"
+                            android:layout_marginTop="2dp"
+                            android:background="#fff"
+                            android:elevation="4dp"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center|center_vertical|center_horizontal"
+                                android:padding="5dp"
+                                android:text="To Date"
+                                android:textColor="@color/darkblue" />
+
+
+                            <TextView
+                                android:id="@+id/to_date"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/raleway_semibold"
+                                android:textColor="@color/blue" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/parent_layout"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="16dp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="0.2"
+            android:orientation="vertical">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:layout_below="@+id/layout"
+                android:layout_margin="5dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/back"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:background="@color/navyblue"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="Back"
+                    android:textColor="#ffffffff" />
+
+                <Button
+                    android:id="@+id/view_report"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="2dp"
+                    android:layout_weight="1"
+                    android:background="@color/green"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="View Report"
+                    android:textColor="#ffffffff" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
